@@ -1,0 +1,93 @@
+@Restaurants.API_HostAddress = http://localhost:5257
+@token = CfDJ8LDbxV1bytlDp3KC3C5pj5Bk4up0t2Hr-PDktm2S8BCIgGM3XUvI-WXuHwC4nl12Xh_SILbAJySfuB_p-LCyLvlG4zvwiDS_ncA_RNClUHjJyZkqPgTcg7oZSZnLfirkQJ-TmUKyMbgbAPvBPwWxfgezkD972x40IAY0xuKDd_PcGNFZbblCiOwIfxpqXXilGqviMgTDdJKpGRaPGuf1piKDt9L2BwSZt_9S2-d1tdQFVh8X26Sb1OsEjBduoDnaka6z9kt8KTZOwAkQw39vYE360Ua2wh5GuDTuCnQinsN9gK5L4P37z2Rd6iizqzJq5GWbkdV13bUAwGwCO6LzYtC1_twnwL6GRjvxedG4FYlJ-YBS1u4QM5RKPzLxJU12WYa8oR2jl89KscLwln-C2YtalbWvIUUOs9V5KKBbp06eXRbglhg7WMlN_QlHFnKbchzhI0Bx0fgQ8KHkka2del5kO4K8IO4fqh5CM77al0hRmGZYBUiGdXVkoZ9dtZ_iejof6ECt0T73Nw2w6SKqUhKIjjG3ck_De78iYSFCOeHOeS0Iq5ngWHCijQDHYuJFyPXl7JA-97RzpYCqIZtFj2lKxXHQiec2HMhib1khLnHFCwv1Aj5Wl6vHQ27rFAwJDB4XsmbOijG7ai8lAFpVl4mcGS6Hg-XTyVY3BYxa4MfyBqo4C44BcQm0zL3gQZ45ufne9q0KZ57JaBjDSGazdQPGw9YWI86lrV5m_ZiPupcwRSjSULcsd21kuy9s0DkEhib9OPeziJO8OT0X1ronBvSv_fTqR0Syohx_CSca6eDR
+
+###
+GET {{Restaurants.API_HostAddress}}/api/Restaurants
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{Restaurants.API_HostAddress}}/api/Restaurants/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+POST {{Restaurants.API_HostAddress}}/api/Restaurants
+Content-Type: application/json
+
+{
+  "Name": "Spicy Delights",
+  "Description" : "A Culinary experience",
+  "Category" : "Italian",
+  "HasDelivery" : true,
+  "ContactEmail" : "info@gourmentdelicasy.com",
+  "ContactNumber": "555-123-4567",
+  "City": "Metropolis",
+  "Street": "456 Gourmet Avenue",
+  "PostalCode": "54321"
+}
+
+###
+PUT {{Restaurants.API_HostAddress}}/api/Restaurants
+Content-Type: application/json
+
+{
+  "id": 13,
+  "name": "Spicy Delights 2",
+  "description": "A Culinary experience",
+  "category": "Italian",
+  "hasDelivery": true,
+  "contactEmail": "info@gourmentdelicasy.com",
+  "contactNumber": "555-123-4567",
+  "dishes": []
+}
+
+###
+DELETE {{Restaurants.API_HostAddress}}/api/Restaurants/14
+Content-Type: application/json
+
+###
+POST {{Restaurants.API_HostAddress}}/api/Restaurants/1/dishes
+Content-Type: application/json
+
+{
+  "name": "Chesseburger",
+  "description": "A hamburger with chesse",
+  "Price": 23,
+  "KiloCalories": 1
+}
+
+###
+GET {{Restaurants.API_HostAddress}}/api/Restaurants/1/dishes
+Content-Type: application/json
+
+###
+DELETE {{Restaurants.API_HostAddress}}/api/Restaurants/1/dishes/6
+Content-Type: application/json
+
+###
+POST {{Restaurants.API_HostAddress}}/api/identity/register
+Content-Type: application/json
+
+{
+  "email": "owner@monteroc.com",
+  "password": "Password1!"
+}
+
+###
+POST {{Restaurants.API_HostAddress}}/api/identity/login
+Content-Type: application/json
+
+{
+  "email": "admin@monteroc.com",
+  "password": "Password1!"
+}
+
+###
+PATCH {{Restaurants.API_HostAddress}}/api/identity/update
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "nationality": "Dominican"
+}
