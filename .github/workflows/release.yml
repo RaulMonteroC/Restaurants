@@ -33,11 +33,11 @@ jobs:
     needs: build
     steps:
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v4.1.8
+        uses: actions/download-artifact@v4
         with:
           name: api-artifact
       - name: Azure WebApp
-        uses: Azure/webapps-deploy@v4
+        uses: Azure/webapps-deploy@v3.0.1
         with:
           app-name: ${{secrets.WEB_APP_DEV}}    
           publish-profile: ${{secrets.PUBLISH_PROFILE_DEV}}
@@ -51,7 +51,7 @@ jobs:
         with:
           name: api-artifact
       - name: Azure WebApp
-        uses: Azure/webapps-deploy@v4
+        uses: Azure/webapps-deploy@v3.0.1
         with:
           app-name: ${{secrets.WEB_APP_PROD}}    
           publish-profile: ${{secrets.PUBLISH_PROFILE_PROD}}
